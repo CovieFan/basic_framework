@@ -109,7 +109,6 @@ add_custom_command(
     TARGET ${PROJECT_NAME}.elf POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex
     COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin
-    COMMENT "Building hex & bin file..."
-    COMMENT "EXCUTABLE SIZE:"
+    COMMENT "Building hex & bin file, then printing executable size..."
     COMMAND ${SIZE} ${PROJECT_NAME}.elf
   )
